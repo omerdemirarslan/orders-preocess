@@ -23,3 +23,10 @@ services:
              python manage.py runserver 0.0.0.0:8000"
     depends_on:
       - db
+      - redis
+  redis:
+    image: redis:latest
+    expose:
+      - '6379'
+    ports:
+      - "6379:6379"
