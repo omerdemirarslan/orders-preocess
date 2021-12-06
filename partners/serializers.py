@@ -4,25 +4,22 @@ from django.contrib.auth.models import User
 from partners.models import Restaurant, Category, Products
 
 
-class ProductSerializer(serializers.HyperlinkedModelSerializer):
+class ProductSerializer(serializers.ModelSerializer):
     """ Product Serializer Class """
-
     class Meta:
         model = Products
-        fields = '__all__'
+        fields = ["name", "category", "restaurant"]
 
 
-class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
+class RestaurantSerializer(serializers.ModelSerializer):
     """ Restaurant Serializer Class """
-
     class Meta:
         model = Restaurant
-        fields = '__all__'
+        fields = ["name", "is_active"]
 
 
-class CategorySerializer(serializers.HyperlinkedModelSerializer):
+class CategorySerializer(serializers.ModelSerializer):
     """ Category Serializer Class """
-
     class Meta:
         model = Category
-        fields = '__all__'
+        fields = ["name"]
