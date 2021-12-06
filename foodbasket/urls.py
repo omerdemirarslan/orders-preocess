@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 api_urls = [
-    path('api/v1/', include('partners.urls'))
+    path('api/v1/partners/', include('partners.urls')),
+    path('api/v1/orders/', include('orders.urls'))
 ]
 
 urlpatterns = [

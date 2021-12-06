@@ -19,7 +19,7 @@ class RedisClient:
 
     def publish_data_on_redis(self, json_data: dict, channel_name: str) -> bool:
         """
-        Tis Method Publishing Data To Redis Client
+        This Method Publishing Data To Redis Client
         :param json_data:
         :param channel_name:
         :return:
