@@ -2,7 +2,7 @@ from django.urls import path
 
 from .views import (ProductsViewSet, RestaurantViewSet, CategoryViewSet)
 
-app_name = 'api/v1'
+app_name = 'api/v1/partners'
 
 urlpatterns = [
     path('products/get-products/', ProductsViewSet.as_view({'get': 'list'}), name='get_products'),

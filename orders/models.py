@@ -10,6 +10,7 @@ class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     address = models.CharField(max_length=255)
     status = models.CharField(max_length=20, default="preparing")
+    amaount = models.CharField(max_length=20)
     order = models.ForeignKey(Products, on_delete=models.DO_NOTHING)
     quantity = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
