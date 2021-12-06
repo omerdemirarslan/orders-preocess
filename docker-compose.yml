@@ -24,9 +24,18 @@ services:
     depends_on:
       - db
       - redis
+      - subcriber
   redis:
     image: redis:latest
     expose:
       - '6379'
     ports:
       - "6379:6379"
+  subcriber:
+    build: remote_server/subscriber
+    command: >
+      sh -c "python subscriber.py"
+    depends_on:
+      - redis
+    links:
+      - redis
