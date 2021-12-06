@@ -14,7 +14,6 @@ The purpose of this project includes: Taking and completing food orders and disp
 * This project's apps:
   * **orders**
   * **partners**
-  * **api**
 
 ### Required Application:
 
