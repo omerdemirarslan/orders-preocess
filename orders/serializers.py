@@ -34,9 +34,12 @@ class OrderSerializer(serializers.ModelSerializer):
             "id": data.get('id'),
             'user_id': data.get('user'),
             'address': data.get('address'),
+            'status': "completed",
+            'amaount': data.get('amaount'),
             'order_id': data.get('order'),
             'quantity': data.get('quantity'),
-            'status': "completed",
+
+
         }
 
         return validated
