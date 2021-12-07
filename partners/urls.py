@@ -1,11 +1,14 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
 
 from .views import (ProductsViewSet, RestaurantViewSet, CategoryViewSet)
 
-app_name = 'api/v1/partners'
+
+router = routers.DefaultRouter()
+router.register(r'products/get-products', ProductsViewSet)
+router.register(r'categories/get-categories', CategoryViewSet)
+router.register(r'partners/get-restaurants', RestaurantViewSet)
 
 urlpatterns = [
-    path('products/get-products/', ProductsViewSet.as_view({'get': 'list'}), name='get_products'),
-    path('categories/get-categories/', RestaurantViewSet.as_view({'get': 'list'}), name='get_categories'),
-    path('restaurants/get-restaurants/', CategoryViewSet.as_view({'get': 'list'}), name='get_restaurants')
+    path('api/v1/', include(router.urls)),
 ]
