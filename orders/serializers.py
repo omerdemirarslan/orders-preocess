@@ -6,18 +6,16 @@ from rest_framework import serializers
 
 class SendOrderSerializer(serializers.ModelSerializer):
     """ Send Order Serializer Class """
-
     class Meta:
         model = Order
-        fields = ["id", "user", "address", "order", "amaount", "quantity", "status"]
+        fields = ["id", "user", "address", "order", "quantity", "status"]
 
 
 class OrderSerializer(serializers.ModelSerializer):
     """ Order Serializer Class """
-
     class Meta:
         model = Order
-        fields = ["user", "address", "order", "amaount", "quantity", "status"]
+        fields = ["user", "address", "order", "quantity", "status"]
 
     def to_internal_value(self, data: dict) -> dict:
         """
@@ -35,7 +33,6 @@ class OrderSerializer(serializers.ModelSerializer):
             'user_id': data.get('user'),
             'address': data.get('address'),
             'status': "completed",
-            'amaount': data.get('amaount'),
             'order_id': data.get('order'),
             'quantity': data.get('quantity'),
 
@@ -49,4 +46,4 @@ class GetOrderSerializer(serializers.ModelSerializer):
     """ Get Order Serializer Class """
     class Meta:
         model = Order
-        fields = ["user", "address", "order", "amaount", "quantity", "status", "created_at"]
+        fields = ["user", "address", "order", "quantity", "status", "created_at"]

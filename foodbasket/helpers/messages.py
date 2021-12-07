@@ -2,6 +2,7 @@
 
 HOME_PAGE = "Welcome To Foodbasket Project. If you want test this django REST API: " \
             "Use the fallowing API request options.\n\n" \
+            "http://localhost:8000/api/v1/ \n" \
             "http://localhost:8000/api/v1/products/get-products/ \n" \
             "http://localhost:8000/api/v1/categories/get-categories/ \n" \
             "http://localhost:8000/api/v1/partners/get-restaurants/ \n" \

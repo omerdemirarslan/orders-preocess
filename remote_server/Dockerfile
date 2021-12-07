@@ -1,8 +1,8 @@
 FROM python:latest
 
-COPY subscriber.py ./
+WORKDIR /usr/app/src
 
-WORKDIR /app
+COPY subscriber.py ./
 
 COPY requirements.txt ./
 
