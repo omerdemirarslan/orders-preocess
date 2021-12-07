@@ -18,13 +18,10 @@ from django.urls import path, include
 
 from .views import home_page_view
 
-api_urls = [
-    path('api/v1/partners/', include('partners.urls')),
-    path('api/v1/orders/', include('orders.urls'))
-]
-
 urlpatterns = [
-    path('', home_page_view, name='home-page'),
     path('admin/', admin.site.urls),
-    path('', include(api_urls))
+    path('', home_page_view, name='home-page'),
+    path('api/v1/', include('api.urls')),
+    path('', include('partners.urls')),
+    path('', include('orders.urls'))
 ]
