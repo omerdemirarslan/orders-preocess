@@ -10,13 +10,6 @@ class RedisClient:
             db=1
         )
 
-    def get_client(self):
-        """
-        This Method Return Redis Client
-        :return:
-        """
-        return self.redis_client
-
     def publish_data_on_redis(self, json_data: dict, channel_name: str) -> bool:
         """
         This Method Publishing Data To Redis Client
