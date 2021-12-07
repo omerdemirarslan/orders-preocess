@@ -13,7 +13,7 @@ class SendOrders:
         self.channel = 'orders'
         self.pub_sub = subscriber.pubsub()
         self.pub_sub.subscribe(channel)
-        self.api_url = "http://app:8000/api/v1/order/get-order/"
+        self.api_url = "http://app:8000/api/v1/orders/get-order/"
 
         while True:
             message = self.pub_sub.get_message()

@@ -15,6 +15,7 @@ from utility.redis_helper.redis_client import RedisClient
 class SendOrderViewSet(viewsets.ModelViewSet):
     """ Send Order To Pub/Sub """
     serializer_class = SendOrderSerializer
+    queryset = Order.objects.none()
 
     def order_send_to_pub_sub(self, json_data: dict, channel_name: str):
         """

@@ -29,11 +29,17 @@ For the project to up; Docker application must be installed and running in your 
     docker-compose up
 
 ### In Browser:
-    0.0.0.0:8000 or localhost:8000
+    * http://localhost:8000/ or http://0.0.0.0:8000/ : You Can Show The Project Explaning
+    * http://localhost:8000/api/v1/ : You Can Show The Available API URL's
 
 ### API Endpoints:
 
-### Test Case Scenarios:
+    * /api/v1/                              (All Available API URL's)
+    * /api/v1/products/get-products/        (All Products)
+    * /api/v1/categories/get-categories/    (All Categories)
+    * /api/v1/partners/get-restaurants/     (All Restaurants)
+    * /api/v1/orders/create-order/          (Order Creating)
+    * /api/v1/orders/get-order/             (All Order)
 
 ### Endpoints
 
