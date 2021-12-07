@@ -43,46 +43,97 @@ For the project to up; Docker application must be installed and running in your 
 
 ### Endpoints
 
+#### Get Restaurants
+
+#### Request
+    api/v1/partners/get-restaurants/
+
+#### Response
+
+```json
+{
+  "name": "Burger King",
+  "is_active": true
+}
+```
+
+---
+
+#### Get Categories
+
+#### Request
+    /api/v1/categories/get-categories/
+
+#### Response
+
+```json
+{
+  "name": "Fast Food"
+}
+```
+
+---
+
+#### Get Products
+
+#### Request
+    /api/v1/products/get-products/
+
+#### Response
+
+```json
+{
+  "name": "Hamburger",
+  "category": 1,
+  "restaurant": 1
+}
+```
+
 #### Create Order
 
 #### Request
-
-```json
-```
+    /api/v1/orders/create-order/
 
 #### Response
 
 ```json
+{
+    "id": 43,
+    "user": 1,
+    "address": "Yeni Mahalle",
+    "order": 1,
+    "quantity": 45,
+    "status": "preparing"
+}
 ```
 
 ---
 
-#### Complete Orders
+#### Get Order
 
 #### Request
-
-```json
-```
+    /api/v1/orders/get-orders/
 
 #### Response
 
 ```json
+{
+  "user": 1,
+  "address": "Yeni Mahalle",
+  "order": 1,
+  "quantity": 45,
+  "status": "Completed",
+  "created_at": "2021-12-07T13:33:58.882846Z"
+    }
 ```
 
 ---
 
-#### List Orders
-
+#### Confirm Order
 
 #### Request
-
-```json
-```
-
-#### Response
-
-```json
-```
+    This API Control Orders and Change Order Status
+    /api/v1/orders/confirm/
 
 ---
 ---
