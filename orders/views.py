@@ -80,7 +80,7 @@ class OrderViewSet(viewsets.ModelViewSet):
         """
         try:
             pre_order = Order.objects.get(id=request.data.get('id'))
-            pre_order.status = "processed"
+            pre_order.status = "Completed"
             pre_order.save()
         except Order.DoesNotExist:
             return Response({"Error": "Order does not exist"}, status=status.HTTP_400_BAD_REQUEST)

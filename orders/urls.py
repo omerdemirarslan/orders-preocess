@@ -5,7 +5,8 @@ from .views import (SendOrderViewSet, OrderViewSet)
 
 router = routers.DefaultRouter()
 router.register(r'orders/create-order', SendOrderViewSet, basename="create-order")
-router.register(r'orders/get-order', OrderViewSet, basename="get-order")
+router.register(r'orders/get-orders', OrderViewSet, basename="get-orders")
+router.register(r'orders/confirm', OrderViewSet, basename="confirm")
 
 urlpatterns = [
     path('api/v1/', include(router.urls))
