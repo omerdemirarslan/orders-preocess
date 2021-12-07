@@ -33,8 +33,6 @@ services:
       - "6379:6379"
   subcriber:
     build: remote_server
-    command: >
-      sh -c "python subscriber.py"
     depends_on:
       - redis
     links:
