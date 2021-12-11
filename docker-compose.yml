@@ -24,14 +24,14 @@ services:
     depends_on:
       - db
       - redis
-      - remote_server
+      - subscriber
   redis:
     image: redis:latest
     expose:
       - '6379'
     ports:
       - "6379:6379"
-  subcriber:
+  subscriber:
     build: remote_server
     depends_on:
       - redis
