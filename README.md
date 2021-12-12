@@ -102,6 +102,7 @@ For the project to up; Docker application must be installed and running in your 
     "user": 1,
     "address": "Yeni Mahalle",
     "order": 1,
+    "price": 34,99
     "quantity": 45,
     "status": "preparing"
 }
@@ -121,6 +122,7 @@ For the project to up; Docker application must be installed and running in your 
   "user": 1,
   "address": "Yeni Mahalle",
   "order": 1,
+  "price": 34,99,
   "quantity": 45,
   "status": "Completed",
   "created_at": "2021-12-07T13:33:58.882846Z"
