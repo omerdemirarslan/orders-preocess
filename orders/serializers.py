@@ -32,7 +32,7 @@ class OrderSerializer(serializers.ModelSerializer):
             "id": data.get('id'),
             'user_id': data.get('user'),
             'address': data.get('address'),
-            'status': "completed",
+            'status': data.get('status'),
             'order_id': data.get('order'),
             'quantity': data.get('quantity'),
 

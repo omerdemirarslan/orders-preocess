@@ -52,23 +52,11 @@ class SendOrderViewSet(viewsets.ModelViewSet):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class OrderViewSet(viewsets.ModelViewSet):
-    serializer_class = GetOrderSerializer
+class ConfirmOrderViewSet(viewsets.ModelViewSet):
+    serializer_class = OrderSerializer
     queryset = Order.objects.all()
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ('status',)
-
-    def list(self, request, format=None, **kwargs):
-        """
-        This Method List Orders
-        :param request:
-        :param format:
-        :param kwargs:
-        :return:
-        """
-        serializer = GetOrderSerializer(self.filter_queryset(self.queryset), many=True)
-
-        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def create(self, request, format=None, **kwargs):
         """
@@ -87,3 +75,21 @@ class OrderViewSet(viewsets.ModelViewSet):
 
         return Response({"Success": "Order updated"}, status=status.HTTP_201_CREATED)
 
+
+class GetOrderViewSet(viewsets.ModelViewSet):
+    serializer_class = GetOrderSerializer
+    queryset = Order.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ('status',)
+
+    def list(self, request, format=None, **kwargs):
+        """
+        This Method List Orders
+        :param request:
+        :param format:
+        :param kwargs:
+        :return:
+        """
+        serializer = GetOrderSerializer(self.filter_queryset(self.queryset), many=True)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
